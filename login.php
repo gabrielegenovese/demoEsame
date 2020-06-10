@@ -25,9 +25,8 @@ $db = new PDO("mysql:host=$host;dbname=$db_name", $db_user, $db_pass);
 if (isset($_POST["username"]) && isset($_POST["password"])) {
   $user =  $_POST['username'];
   $pass =  $_POST["password"];
-  $statement = $db->prepare("SELECT id, id_device, password FROM user WHERE username=:user");
+  $statement = $db->prepare("SELECT n_matricola, id_device, password FROM user WHERE n_matricola=:user");
   $statement->bindParam(":user", $user, PDO::PARAM_STR);
-  $statement->bindParam(":pass", $pass, PDO::PARAM_STR);
   $statement->execute();
   if ($statement->rowCount() != 0) {
     foreach ($statement as $record) {
