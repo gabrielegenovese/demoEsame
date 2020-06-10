@@ -32,9 +32,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     foreach ($statement as $record) {
       $user_id = $record[0];
       if (password_verify($_POST["password"], $record[2])) {
-        setcookie("user_id", $user_id, time()+(60*60*6)); //time out di 6 ore
         //controllo sul device
         if (1==1) { //getIdDevice == record[1]
+          setcookie("user_id", $user_id, time()+(60*60*6)); //time out di 6 ore
           echo "<script> alert('Login effettuato correttamente');
                   window.open('./index.php', '_self'); </script>";
         }else {
