@@ -62,7 +62,9 @@
 
       $today = getdate();
       $today_column = $today['wday'];
-
+      //cambiando giorno cambia la settimana e il Calendario
+      //togliere il commento per vedere che il calendario è dinamico
+      //$today['mday'] = 18;
       for ($i=1; $i < 8; $i++) {
         $week[$i] = $today['mday']-$today_column+$i;
       }
