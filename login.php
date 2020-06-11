@@ -1,9 +1,9 @@
 <html>
 <?php
-include "db_pass.php";
+include "./db_pass.php";
 $db = new PDO("mysql:host=$host;dbname=$db_name", $db_user, $db_pass);
 if (isset($_COOKIE['user_id'])) {
-  header("Location:index.php");
+  header("Location:./index.php");
 }
 ?>
 <head>
