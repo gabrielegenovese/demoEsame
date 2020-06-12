@@ -8,5 +8,5 @@ function eventi(){
 }
 
 function getVideoLessons(){
-  window.location.href = './videoconference.html';
+  window.location.href = '../static_pages/videoconference.html';
 }
