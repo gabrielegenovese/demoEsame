@@ -16,7 +16,7 @@ if (isset($_COOKIE['user_id'])) {
   <h1>Login</h1>
   <div class="login-page">
     <div class="form">
-      <form method="post" action="./login.php" class="login-form">
+      <form method="post" action="./login.php">
         <input type="text" name="username" placeholder="username" /><br><br>
         <input type="password" name="password" placeholder="password" /><br><br>
         <input type="submit" />
@@ -41,7 +41,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       //controllo password
       if ($pass == $record[2]) {
         //controllo sul device
-        if (1==1) { //getIdDevice == record[1]
+        if (1==1) { //getIdDevice == record[1] --> da approfondire come prendere il mac del dispositivo e come controllarlo
           setcookie("user_id", $user_id, time()+(60*60*6)); //time out di 6 ore
 
           //verifica se è il profilo di un insegnante
@@ -57,11 +57,11 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
           echo "<script> alert('Device non registrato'); </script>";
         }
       } else {
-        echo "<script> alert('Lo username $user non esiste nel nostro database oppure hai sbagliato la password'); </script>";
+        echo "<script> alert('Hai sbagliato la password!'); </script>";
       }
     }
   } else {
-      echo "<script> alert('Lo username $user non esiste nel nostro database oppure hai sbagliato la password'); </script>";
+      echo "<script> alert('Lo username $user non esiste nel nostro database'); </script>";
   }
 }
 
